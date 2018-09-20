@@ -1,0 +1,18 @@
+# Enforce some common default.
+* text=auto
+
+# Mark source files as crlf text.
+*.uc text eol=crlf diff=java
+
+# Mark some script/markup files as crlf.
+*.upkg text eol=crlf
+*.bat text eol=crlf
+
+# Mark common asset formats as binary
+*.pcx -text -delta
+*.bmp -text -delta
+*.wav -text -delta
+*.mp3 -text -delta
+*.ogg -text -delta
+*.ico -text -delta
+*.3ds -text -delta
