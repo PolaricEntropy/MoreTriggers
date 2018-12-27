@@ -22,9 +22,15 @@ function BeenTriggered(Actor Other, Actor Instigator)
     foreach AllActors(Class'ScriptedPawn',P, event)
 	{
 		if(Appear == ENT_Enter)
-			P.EnterWorld();
+		{
+			if(!P.bInWorld)
+				P.EnterWorld();
+		}
 		else if(Appear == ENT_Leave)
-			P.LeaveWorld();
+		{
+			if(P.bInWorld)
+				P.LeaveWorld();
+		}
 		else
 		{
 			if(!P.bInWorld)
