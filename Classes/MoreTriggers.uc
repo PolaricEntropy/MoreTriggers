@@ -10,11 +10,15 @@ abstract;
 #exec TEXTURE IMPORT NAME=MoreTriggersIcon FILE=Textures\MoreTriggersIcon.bmp Mips=Off FLAGS=2
 
 var(Events) class<Actor> LimitingClass;
+var() int DeactivationThreshold;
+var int triggeredCount;
 
 function Trigger(Actor other,Pawn instigator)
 {
 	BeenTriggered(other, instigator);
-	if(bTriggerOnceOnly)
+	triggeredCount++;
+
+	if(bTriggerOnceOnly || (triggeredCount >= DeactivationThreshold && DeactivationThreshold != 0))
 		Destroy();
 }
 
@@ -23,7 +27,9 @@ function Touch(Actor other)
 	if(IsRelevant(other))
 	{
 		BeenTriggered(Self, other);
-		if(bTriggerOnceOnly)
+		triggeredCount++;
+
+		if(bTriggerOnceOnly || (triggeredCount >= DeactivationThreshold && DeactivationThreshold != 0))
 			Destroy();
 	}
 }
