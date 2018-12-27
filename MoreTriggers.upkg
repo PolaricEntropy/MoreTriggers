@@ -1,0 +1,9 @@
+[Flags]
+AllowDownload=False
+ClientOptional=False
+ServerSideOnly=False
+
+[Package]
+IgnoreTextures=True
+TexturePolyFlags=2050
+TextureMips=Off
