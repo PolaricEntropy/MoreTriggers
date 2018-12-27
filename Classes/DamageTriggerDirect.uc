@@ -5,14 +5,14 @@
 //
 // By: DDL
 //=============================================================================
-
-class DamageTriggerDirect expands MoreTriggers;
+class DamageTriggerDirect extends MoreTriggers;
 
 var() float damageAmount;
 var() bool bConstantDamage;
 var() float damageInterval;
 var() name damageType;
 var() float damageradius;
+var Actor savedOther;
 var Actor savedinstigator;
 var bool bIsOn;
 
@@ -24,10 +24,10 @@ function Timer()
 		return;
 	}
 
-	beentriggered(savedinstigator);
+	beentriggered(savedOther, savedinstigator);
 }
 
-function BeenTriggered(actor instigator)
+function BeenTriggered(Actor Other, actor instigator)
 {
     local actor A;
 
@@ -50,6 +50,7 @@ function BeenTriggered(actor instigator)
         {
             settimer(damageinterval, true);
             savedinstigator = instigator;
+			savedOther = Other;
         }
     }
 }
@@ -70,5 +71,4 @@ defaultproperties
      bConstantDamage=True
      damageInterval=0.500000
      DamageType=Burned
-     bIsOn=false
 }

@@ -3,8 +3,7 @@
 //
 // Specify up to 16 things you want to happen: upon triggering, it'll fire off one of them, chosen at random. 
 //=============================================================================
-
-class RandomTrigger expands MoreTriggers;
+class RandomTrigger extends MoreTriggers;
 
 var() name PossibleEvents[16];
 var() bool bTouchInstead; //if true, calls events' Touch() instead of Trigger() (makes it work with teleporters)
@@ -26,7 +25,7 @@ function PostBeginPlay()
 	}
 }
 
-function BeenTriggered(Actor instigator)
+function BeenTriggered(Actor Other, Actor instigator)
 {
 	local int x;
 	local Actor a;
@@ -63,5 +62,4 @@ function BeenTriggered(Actor instigator)
 defaultproperties
 {
 	CollisionRadius=96.000000
-	bTouchInstead=False
 }

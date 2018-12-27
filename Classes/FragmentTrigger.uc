@@ -5,7 +5,6 @@
 //
 // By: DDL
 //=============================================================================
-
 class FragmentTrigger extends MoreTriggers;
 
 var() class<DeusExFragment> FragClass[8];
@@ -21,7 +20,7 @@ var() vector Momentum;
 //internal
 var int numclasses;
 
-function BeenTriggered(Actor instigator)
+function BeenTriggered(Actor Other, Actor instigator)
 {
 	local rotator tracerot;
 	local int i;
@@ -87,8 +86,7 @@ function postbeginplay()
 
 defaultproperties
 {
-	bDirectional=true
-	bRandomAngle=false
+	bDirectional=True
 	FixedAngleVar=2048
-	fixedfragdrawscale=1.0
+	fixedfragdrawscale=1.000000
 }

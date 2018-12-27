@@ -5,19 +5,18 @@
 // So you could have a player Touch() this trigger and have this trigger then Frob() an NPC behind a door, initiating a conversation that wouldn't otherwise be possible. Or something.
 // I'm sure you could come up with much better ideas.
 //=============================================================================
-
 class TriggerTrigger extends MoreTriggers;
 
 enum eTrigType
-	{
+{
 	TRIG_Trigger,
 	TRIG_Touch,
 	TRIG_Frob
-	};
+};
 
 var() eTrigType TrigType;
 
-function BeenTriggered(Actor Instigator)
+function BeenTriggered(Actor Other, Actor Instigator)
 {
 	local Actor a;
 
@@ -40,5 +39,4 @@ function BeenTriggered(Actor Instigator)
 
 defaultproperties
 {
-	TrigType=TRIG_Trigger
 }

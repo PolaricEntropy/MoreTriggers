@@ -3,13 +3,12 @@
 //
 // Gives the player energy.
 //=============================================================================
-
 class EnergyTrigger extends MoreTriggers;
 
 var() int Energy; //amount of BE energy to make player have
 var() bool bAbsoluteSet; //if true, player's energy is set to Energy. If false, Energy is added on
 
-function BeenTriggered(Actor instigator)
+function BeenTriggered(Actor Other, Actor instigator)
 {
 	local DeusExPlayer player;
 	player=DeusExPlayer(instigator);
@@ -28,7 +27,5 @@ function BeenTriggered(Actor instigator)
 
 defaultproperties
 {
-	Energy=0
 	bAbsoluteSet=True
-	TriggerType=TT_PlayerProximity
 }

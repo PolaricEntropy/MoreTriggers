@@ -3,7 +3,6 @@
 //
 // Spawns shit. You can specify an owner and a tag for the spawned item, too.
 //=============================================================================
-
 class SpawnTrigger extends MoreTriggers;
 
 var() class<Actor> SpawnClass;
@@ -13,8 +12,9 @@ var() bool bSpawnOutOfSight;
 var() float checktimer;
 var actor spawnOwner;
 var actor savedinstigator;
+var actor savedOther;
 
-function BeenTriggered(Actor instigator)
+function BeenTriggered(Actor Other, Actor instigator)
 {
 	local actor A;
 
@@ -41,6 +41,7 @@ function BeenTriggered(Actor instigator)
 		if(!checkspawn())
 		{
 			savedinstigator = instigator;
+			savedOther = Other;
 			settimer(checktimer,true);
 		}
 		else
@@ -54,7 +55,7 @@ function BeenTriggered(Actor instigator)
 function timer()
 {
 	if(checktimer > 0)
-		BeenTriggered(savedinstigator);
+		BeenTriggered(savedOther, savedinstigator);
 }
 
 function bool Checkspawn()
@@ -79,6 +80,5 @@ function bool Checkspawn()
 
 defaultproperties
 {
-	spawnClass=None
-	checktimer=2.0
+	checktimer=2.000000
 }

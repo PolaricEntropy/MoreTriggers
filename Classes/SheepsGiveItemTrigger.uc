@@ -5,7 +5,6 @@
 //
 // By: Sheep
 //=============================================================================
-
 class SheepsGiveItemTrigger extends MoreTriggers;
 
 var() class<Inventory> GiveClass;
@@ -18,7 +17,7 @@ function PreBeginPlay()
 		Destroy();
 }
 
-function BeenTriggered(Actor instigator)
+function BeenTriggered(Actor Other, Actor instigator)
 {
 	local Pawn pwn;
 	local Inventory inv;
@@ -39,5 +38,4 @@ function BeenTriggered(Actor instigator)
 
 defaultproperties
 {
-	GiveClass=None
 }

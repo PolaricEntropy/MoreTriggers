@@ -3,7 +3,6 @@
 //
 // Allows pawns to EnterWorld() and LeaveWorld() without requiring a MissionScript.
 //=============================================================================
-
 class PawnAppearTrigger extends MoreTriggers;
 
 enum EEntryType
@@ -11,12 +10,11 @@ enum EEntryType
 	ENT_Enter,
 	ENT_Leave,
 	ENT_Toggle
-
 };
 
 var() EEntryType Appear;
 
-function BeenTriggered(Actor Instigator)
+function BeenTriggered(Actor Other, Actor Instigator)
 {
 
 	local ScriptedPawn P;
@@ -37,8 +35,6 @@ function BeenTriggered(Actor Instigator)
 	}
 
 }
-
-
 
 defaultproperties
 {

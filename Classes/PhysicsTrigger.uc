@@ -4,14 +4,13 @@
 // Allows you to change the physics state on specified actors.
 //
 // By: Unknown, probably Sheep.
-// Modified by: bjorn98009_91 to support MoreTriggers and a custom physics property (instead of just Falling).
+// Modified by: PolaricEntropy to support MoreTriggers and a custom physics property (instead of just Falling).
 //=============================================================================
-
-class PhysicsTrigger expands MoreTriggers;
+class PhysicsTrigger extends MoreTriggers;
 
 var(PhysicsTrigger) const EPhysics NewPhysicsState;
 
-function BeenTriggered(Actor Instigator)
+function BeenTriggered(Actor Other, Actor Instigator)
 {
 	local Actor A;
 

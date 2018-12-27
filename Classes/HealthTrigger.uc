@@ -3,7 +3,6 @@
 //
 // Adds or sets absolutely, the players health. You can specify limbs, too, so you can have a trigger that very specifically rips JC's arm off. Or heals them.
 //=============================================================================
-
 class HealthTrigger extends MoreTriggers;
 
 var() int Health;
@@ -15,7 +14,7 @@ var() int HealthArmLeft;
 var() int HealthArmRight;//amount of Health to make player have
 var() bool bAbsoluteSet; //if true, player's Health is set to Health. If false, Health is added on
 
-function BeenTriggered(Actor instigator)
+function BeenTriggered(Actor Other, Actor instigator)
 {
 	local DeusExPlayer player;
 	player=DeusExPlayer(instigator);
@@ -57,13 +56,5 @@ function BeenTriggered(Actor instigator)
 
 defaultproperties
 {
-	Health=0
-	HealthHead=0
-	HealthTorso=0
-	HealthLegLeft=0
-	HealthLegRight=0
-	HealthArmLeft=0
-	HealthArmRight=0
 	bAbsoluteSet=True
-	TriggerType=TT_PlayerProximity
 }

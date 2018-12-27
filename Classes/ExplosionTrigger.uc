@@ -2,17 +2,15 @@
 // ExplosionTrigger
 //
 // Unsurprisingly, spawns an explosion.
+// Explosion code ripped almost cluelessly from DeusExDecoration :)
 //=============================================================================
-
-//Explosion code ripped almost cluelessly from DeusExDecoration :)
-
 class ExplosionTrigger extends MoreTriggers;
 
 var() int explosionDamage;			// how much damage does the explosion cause?
 var() float explosionRadius;		// how big is the explosion?
 
 
-function BeenTriggered(Actor instigator)
+function BeenTriggered(Actor Other, Actor instigator)
 {
 	local ShockRing ring;
 	local ScorchMark s;

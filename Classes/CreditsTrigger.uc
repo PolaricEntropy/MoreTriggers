@@ -3,13 +3,12 @@
 //
 // Gives the player credits (duh).
 //=============================================================================
-
 class CreditsTrigger extends MoreTriggers;
 
 var() int NumCredits; //number of credits to make player have
 var() bool bAbsoluteSet; //if true, player's credits is set to NumCredits. If false, NumCredits is added on
 
-function BeenTriggered(Actor instigator)
+function BeenTriggered(Actor Other, Actor instigator)
 {
 	local DeusExPlayer player;
 	player=DeusExPlayer(instigator);
@@ -28,7 +27,5 @@ function BeenTriggered(Actor instigator)
 
 defaultproperties
 {
-	NumCredits=0
 	bAbsoluteSet=True
-	TriggerType=TT_PlayerProximity
 }

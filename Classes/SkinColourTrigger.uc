@@ -6,7 +6,6 @@
 //
 // By: DDL
 //=============================================================================
-
 class SkinColourTrigger extends MoreTriggers;
 
 var() name JCDefaultTag;
@@ -15,7 +14,7 @@ var() name JCLatinoTag;
 var() name JCGingerTag;
 var() name JCAlbinoTag;
 
-function beentriggered(actor ins)
+function beentriggered(Actor Other, actor ins)
 {
 	local deusexplayer p;
 	local name trigname;
@@ -59,3 +58,6 @@ function beentriggered(actor ins)
 	}
 }
 
+defaultproperties
+{
+}

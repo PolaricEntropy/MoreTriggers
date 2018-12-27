@@ -5,8 +5,7 @@
 //
 // By: Steve Tack :D
 //=============================================================================
-
-class SetGoalTrigger expands MoreTriggers;
+class SetGoalTrigger extends MoreTriggers;
 
 // Creates a goal when touched or triggered
 // Set bCollideActors to False to make it triggered
@@ -14,7 +13,7 @@ class SetGoalTrigger expands MoreTriggers;
 var() name goalName;
 var() string goalText;
 
-function BeenTriggered(Actor Instigator)
+function BeenTriggered(Actor Other, Actor Instigator)
 {
 	local DeusExGoal newGoal;
 	local DeusExGoal prevGoal;

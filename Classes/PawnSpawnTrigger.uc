@@ -4,7 +4,6 @@
 // Normal SpawnTriggers are broken, and don't really work for pawns. This one does, more or less.
 // Will not allow you to specify inventory, but alliances can be set. Thus you could use it to randomly add pedestrians in the background, or to make an eternal wave of MJ12Troops (since they already have inventory specified).
 //=============================================================================
-
 class PawnSpawnTrigger extends MoreTriggers;
 
 var() class<ScriptedPawn> SpawnClass;
@@ -16,8 +15,9 @@ var() bool bSpawnOutOfSight;
 var() float checktimer;
 var actor spawnOwner;
 var actor savedinstigator;
+var actor savedOther;
 
-function BeenTriggered(Actor Instigator)
+function BeenTriggered(Actor Other, Actor Instigator)
 {
 	local ScriptedPawn MyPawn;
 
@@ -37,6 +37,7 @@ function BeenTriggered(Actor Instigator)
 		if(!checkspawn())
 		{
 			savedinstigator = instigator;
+			savedOther = Other;
 			settimer(checktimer,true);
 		}
 		else
@@ -49,7 +50,7 @@ function BeenTriggered(Actor Instigator)
 function timer()
 {
 	if(checktimer > 0)
-		BeenTriggered(savedinstigator);
+		BeenTriggered(savedOther, savedinstigator);
 }
 
 function bool Checkspawn()
@@ -79,10 +80,7 @@ function bool Checkspawn()
 
 defaultproperties
 {
-	bSpawnOutOfSight=true
-	checktimer=2.0
-	SpawnClass=None
-	Orders='Wandering'
-	AllianceName=None
-	AllianceLevel=0.000000
+	bSpawnOutOfSight=True
+	checktimer=2.000000
+	Orders=Wandering
 }
