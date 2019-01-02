@@ -3,7 +3,7 @@
 //
 // Makes pawns that can see the triggerer hate them.
 //
-// By: Hawk
+// By: Hawk (for Deus Ex: Revision)
 //=============================================================================
 class LOSHateTrigger extends MoreTriggers;
 

@@ -3,7 +3,7 @@
 //
 // Toggles bUnlit on actors.
 //
-// By: PolaricEntropy
+// By: PolaricEntropy (for Deus Ex: Revision)
 //=============================================================================
 class UnlitTrigger extends MoreTriggers;
 

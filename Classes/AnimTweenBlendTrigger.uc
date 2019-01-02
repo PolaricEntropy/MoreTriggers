@@ -2,7 +2,8 @@
 // AnimTweenBlendTrigger
 //
 // Forces an actor to play the specified anim blended with another anim. Animations in Unreal can be a bit wonky, so your milage may vary.
-// By: PolaricEntropy, based on AnimTrigger.
+//
+// By: PolaricEntropy, based on AnimTrigger (for Deus Ex: Revision)
 //=============================================================================
 class AnimTweenBlendTrigger extends MoreTriggers;
 

@@ -3,7 +3,8 @@
 // 
 // Sets the order of the ScriptedPawn that triggered/touched it.
 // Use either TT_PawnProximity or TT_ClassProximity with a specified ScriptedPawn class in ClassProximityType.
-// By: PolaricEntropy
+//
+// By: PolaricEntropy (for Deus Ex: Revision)
 //=============================================================================
 class OrderPawnTrigger extends MoreTriggers;
 

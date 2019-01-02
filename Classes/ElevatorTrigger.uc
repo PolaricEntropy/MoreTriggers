@@ -3,7 +3,7 @@
 //
 // Allows you to send elevator to keyframes based on what button triggered it, also supports opening doors.
 //
-// By: PolaricEntropy
+// By: PolaricEntropy (for Deus Ex: Revision)
 //=============================================================================
 class ElevatorTrigger extends MoreTriggers;
 

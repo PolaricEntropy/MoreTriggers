@@ -2,7 +2,8 @@
 // FlaggedActorTrigger
 // 
 // Sets a flag with a prefix, suffix and the name of the actor that touched it.
-// By: PolaricEntropy
+//
+// By: PolaricEntropy (for Deus Ex: Revision)
 //=============================================================================
 class FlaggedActorTrigger extends MoreTriggers;
 
